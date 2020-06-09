@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Debug = UnityEngine.Debug;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -30,6 +31,16 @@ public class Player : MonoBehaviour
         {
             GetBonus(2);
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            TakeDamage(10);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            FinDemo();
+        }
     }
 
     void TakeDamage(int damage)
@@ -38,7 +49,8 @@ public class Player : MonoBehaviour
         healthBar.SetHealth(currentHealth);
         if(currentHealth == 0)
         {
-           Debug.Log("GAME OVER");
+            SceneManager.LoadScene("Game Over");
+            Debug.Log("GAME OVER");
         }
     }
 
@@ -46,5 +58,11 @@ public class Player : MonoBehaviour
     {
         currentHealth += bonus;
         healthBar.SetHealth(currentHealth);
+    }
+
+    void FinDemo()
+    {
+        SceneManager.LoadScene("FinDemo");
+        Debug.Log("Fin de la démo");
     }
 }
