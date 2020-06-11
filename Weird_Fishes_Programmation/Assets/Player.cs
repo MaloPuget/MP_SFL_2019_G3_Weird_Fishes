@@ -11,8 +11,29 @@ public class Player : MonoBehaviour
     public Texture2D imgOptions;
     public int maxHealth = 10;
     public int currentHealth;
-
     public HealthBar healthBar;
+
+    void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.name == "Malus")
+        {
+            Debug.Log("Take 1 damage");
+            TakeDamage(1);
+        }
+
+        if (coll.name == "Enemy")
+        {
+            Debug.Log("Take 1 damage");
+            TakeDamage(1);
+        }
+
+        if (coll.name == "Bonus")
+        {
+            Debug.Log("Take 2 bonus");
+            GetBonus(2);
+            Destroy(coll.gameObject);
+        }
+    }
 
     void Start()
     {
@@ -47,7 +68,7 @@ public class Player : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
-        if(currentHealth == 0)
+        if(currentHealth <= 0)
         {
             SceneManager.LoadScene("Game Over");
             Debug.Log("GAME OVER");

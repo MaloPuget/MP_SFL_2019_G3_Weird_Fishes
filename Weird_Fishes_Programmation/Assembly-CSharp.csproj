@@ -55,13 +55,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Bonus.cs" />
+     <Compile Include="Assets\Camera_Baku.cs" />
      <Compile Include="Assets\CharacterController2D.cs" />
+     <Compile Include="Assets\EnemyGFX.cs" />
      <Compile Include="Assets\FinDemo.cs" />
      <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\GameOver.cs" />
      <Compile Include="Assets\HealthBar.cs" />
-     <Compile Include="Assets\Malus.cs" />
      <Compile Include="Assets\Menu.cs" />
      <Compile Include="Assets\Movements.cs" />
      <Compile Include="Assets\Player.cs" />
@@ -329,6 +329,9 @@
  </Reference>
  <Reference Include="UnityEngine.XRModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.0b10/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+ </Reference>
+ <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+ <HintPath>C:/Users/Valentin/Documents/Weird Fishes/MP_SFL_2019_G3_Weird_Fishes/Weird_Fishes_Programmation/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.0b10/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -675,6 +678,20 @@
  <Reference Include="System.Xml.Serialization">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.0b10/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="AstarPathfindingProject.csproj">
+      <Project>{0478AA4B-8904-5544-429C-A6D62335F48A}</Project>
+      <Name>AstarPathfindingProject</Name>
+    </ProjectReference>
+    <ProjectReference Include="PackageToolsEditor.csproj">
+      <Project>{10D47A88-E946-0901-D939-3147ACAE16A4}</Project>
+      <Name>PackageToolsEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
+      <Project>{C5641BE7-36E7-3BB4-D7A1-A91578803929}</Project>
+      <Name>AstarPathfindingProjectEditor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
