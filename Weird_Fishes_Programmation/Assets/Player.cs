@@ -21,10 +21,34 @@ public class Player : MonoBehaviour
             TakeDamage(1);
         }
 
-        if (coll.name == "Enemy")
+        if (coll.name == "BadFish")
         {
             Debug.Log("Take 1 damage");
             TakeDamage(1);
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Destroy(coll.gameObject);
+            }
+        }
+
+        if (coll.name == "VeryBadFish")
+        {
+            Debug.Log("Take 1 damage");
+            TakeDamage(1);
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Destroy(coll.gameObject);
+            }
+        }
+
+        if (coll.name == "BadFish" && Input.GetKeyDown(KeyCode.R))
+        {
+            Destroy(coll.gameObject);
+        }
+
+        if (coll.name == "VeryBadFish" && Input.GetKeyDown(KeyCode.R))
+        {
+            Destroy(coll.gameObject);
         }
 
         if (coll.name == "Bonus")
