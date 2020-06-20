@@ -57,6 +57,12 @@ public class Player : MonoBehaviour
             GetBonus(2);
             Destroy(coll.gameObject);
         }
+        if (coll.name == "orb")
+        {
+            Destroy(coll.gameObject);
+            //yield return new WaitForSeconds(3);
+            FinDemo();
+        }
     }
 
     void Start()
@@ -86,6 +92,10 @@ public class Player : MonoBehaviour
         {
             FinDemo();
         }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            RevenirAuMenu();
+        }
     }
 
     void TakeDamage(int damage)
@@ -109,5 +119,10 @@ public class Player : MonoBehaviour
     {
         SceneManager.LoadScene("FinDemo");
         Debug.Log("Fin de la démo");
+    }
+    void RevenirAuMenu()
+    {
+        SceneManager.LoadScene("Menu");
+        Debug.Log("Revenir au menu");
     }
 }
